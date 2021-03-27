@@ -3,6 +3,7 @@ package com.askgamblers.frontendintegration.tests;
 import com.askgamblers.frontendintegration.helpers.Pause;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.AfterEach;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
@@ -25,6 +26,8 @@ public class TestManager {
         options.addArguments("--disable-extensions", "start-maximized");
         driver = new ChromeDriver(options);
         driver.get(testProperties.getProperty("homepage.url"));
+        driver.navigate().refresh();
+        wait.waitForVisible(driver, 60,By.id("ag-header-search--body"));
     }
 
     @AfterEach
