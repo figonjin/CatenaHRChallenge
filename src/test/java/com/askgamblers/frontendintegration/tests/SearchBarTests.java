@@ -3,11 +3,8 @@ package com.askgamblers.frontendintegration.tests;
 import com.askgamblers.frontendintegration.pageObjects.HomePage;
 import com.askgamblers.frontendintegration.pageObjects.QuickSearchPage;
 import org.junit.jupiter.api.DynamicTest;
-import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.TestFactory;
 import org.junit.jupiter.api.function.ThrowingConsumer;
-import org.openqa.selenium.By;
-import org.openqa.selenium.chrome.ChromeDriver;
 
 import java.util.Arrays;
 import java.util.Collection;
@@ -36,6 +33,11 @@ public class SearchBarTests extends TestManager {
         );
     }
 
+    /*A parametrized test would be more suitable for general integration into the testing lifecycle, however due to
+    the cloudfront issue, it is easier to carry over Headers/Cookies this way to avoid constant hCaptcha
+    authentication requests. Unfortunately due to this choice, any test failing in the stream will
+    stop the execution of any subsequent test, which is not ideal.
+    */
     @TestFactory
     Stream<DynamicTest> searchSpecialCharacters() {
 
