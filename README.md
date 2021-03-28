@@ -57,7 +57,7 @@ You can set some properties in the `.properties` files found in `/src/test/resou
 
 ## Potential Improvements
 - Dynamic Webdriver manager for easier switching between browsers
-- A docker container for easier environment replication
+- A docker container setup for easier environment replication
 - Proper autocomplete, quicksearch and user notification API tests (preferably in a separate project)
 - CI
 - Better report handling/report archiving
