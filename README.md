@@ -32,4 +32,5 @@ Make sure to solve the hCaptcha during execution if not whitelisted on Cloudflar
 - Dynamic Webdriver manager for easier switching between browsers
 - A docker container for easier environment replication
 - Proper autocomplete, quicksearch and user notification API tests (preferably in a separate project)
+- CI
 - More tests!
