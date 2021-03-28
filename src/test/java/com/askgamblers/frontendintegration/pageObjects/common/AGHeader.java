@@ -1,5 +1,6 @@
 package com.askgamblers.frontendintegration.pageObjects.common;
 
+import com.askgamblers.frontendintegration.helpers.Pause;
 import com.askgamblers.frontendintegration.pageObjects.HomePage;
 import com.askgamblers.frontendintegration.pageObjects.LoginPage;
 import com.askgamblers.frontendintegration.pageObjects.QuickSearchPage;
@@ -11,10 +12,13 @@ import org.openqa.selenium.Keys;
 public class AGHeader {
 
     protected WebDriver driver;
+    protected Pause wait = new Pause();
+
     protected By userOptionsAndSignInButton = By.xpath("//div[contains(@class, 'ag-header-navigation-user-login-profile')]");
     protected By userOptionsLogout = By.cssSelector("a[href='/logout']");
     protected By searchInput = By.id("ag-header-search--body");
     protected By agHeaderLogo = By.className("ag-header-logo");
+
 
     public LoginPage openSignIn() {
         driver.findElement(userOptionsAndSignInButton).click();

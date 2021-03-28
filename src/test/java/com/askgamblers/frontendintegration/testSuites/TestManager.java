@@ -33,7 +33,7 @@ public class TestManager {
         driver = new ChromeDriver(options);
         driver.get(testProperties.getProperty("homepage.url"));
         driver.navigate().refresh();
-        wait.waitForVisible(driver, 60,By.id("ag-header-search--body"));
+        wait.waitForVisible(driver, 120,By.id("ag-header-search--body"));
     }
 
     @AfterEach

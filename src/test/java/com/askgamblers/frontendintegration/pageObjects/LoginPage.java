@@ -35,6 +35,7 @@ public class LoginPage extends AGHeader {
     }
 
     public void checkLoginErrorMessage() {
+        wait.waitForVisible(driver, 3, badCredentialsMessage);
         driver.findElement(badCredentialsMessage).isDisplayed();
     }
 
