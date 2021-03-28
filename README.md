@@ -42,6 +42,17 @@ to have allure create a temporary web server for hosting the report, and open it
 ----
 Make sure to solve the hCaptcha during execution if not whitelisted on Cloudflare!
 
+## Configuration
+You can set some properties in the `.properties` files found in `/src/test/resources`
+
+| Property     | Description | Default Value |
+| ------------ | ----------- | ------------- |
+| homepage.url | The base URL for tests | https://www.askgamblers.com/ |
+| webdriver.chrome.driver | The path to the webdriver | chromedriver.exe |
+| test.username | Username used for login tests | fitest |
+| test.password | Password used for login tests | Pa55word |
+| allure.results.directory | Directory for allure reports | target/allure-results |
+
 ## Potential Improvements
 - Dynamic Webdriver manager for easier switching between browsers
 - A docker container for easier environment replication
