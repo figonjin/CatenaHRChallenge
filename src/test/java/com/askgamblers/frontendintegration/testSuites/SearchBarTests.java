@@ -2,6 +2,7 @@ package com.askgamblers.frontendintegration.testSuites;
 
 import com.askgamblers.frontendintegration.pageObjects.HomePage;
 import com.askgamblers.frontendintegration.pageObjects.QuickSearchPage;
+import io.qameta.allure.Feature;
 import org.junit.jupiter.api.DynamicTest;
 import org.junit.jupiter.api.TestFactory;
 import org.junit.jupiter.api.function.ThrowingConsumer;
@@ -21,6 +22,7 @@ public class SearchBarTests extends TestManager {
     stop the execution of any subsequent test, which is not ideal.
     */
 
+    @Feature("Search bar")
     @TestFactory
     Collection<DynamicTest> searchKeywords() {
         HomePage homePage = new HomePage(driver);
@@ -40,6 +42,7 @@ public class SearchBarTests extends TestManager {
     }
 
     //Currently the test fails due to what I assume is a bug related to input sanitization
+    @Feature("Search bar")
     @TestFactory
     Stream<DynamicTest> searchSpecialCharacters() {
 
