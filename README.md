@@ -4,7 +4,7 @@ This repository hosts a Selenium/JUnit based test suite dedicated to functional 
 
 ## Test Coverage
 The tests in this suite focus on checking the functionality of the Login and Quicksearch modules.
-The reasoning behind this coverage is that as a link aggregator/lead generator site, the two major components offered to the user are the database of the casinos and offers, as well as the option to retain their findings and be notified of future offers.
+The reasoning behind this coverage is that as a link aggregator/lead generator site, the two major components offered to the user are the database of the casinos and offers, as well as the option to retain their findings and be notified of future events.
 
 Furthermore, due to fairly aggressive CloudFront policies regarding ddos prevention, manual user input is needed to solve the hCaptcha every time a new test method starts. If somehow this issue is circumvented (through IP whitelisting or policy change) the tests should automatically adapt and not add any extra execution time that is otherwise present.
 
