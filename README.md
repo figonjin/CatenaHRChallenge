@@ -12,7 +12,8 @@ Furthermore, due to fairly aggressive CloudFront policies regarding ddos prevent
 This test suite uses the following projects/tools to work properly:
 - [Maven](https://maven.apache.org) - Fantastic project management tool
 - [JUnit5](https://junit.org/junit5/) - One of the better test management frameworks out there
-- [Selenium](https://www.selenium.dev) - The de-facto web application testing framework-
+- [Selenium](https://www.selenium.dev) - The de-facto web application testing framework
+- [Allure](https://docs.qameta.io/allure/) - Lighweight multi-language test report tool
 
 ## Installation
 This project requires [Java version 11.x](https://adoptopenjdk.net/) and [Maven](https://maven.apache.org) to build correctly.
@@ -25,12 +26,37 @@ Once maven finishes downloading the dependencies and building the project, you c
 ```
 mvn test
 ```
+to run all of the available suites, or
+```
+mvn -Dtest=testSuiteName test
+```
+to run a test suite of your choice.
 
+----
+Once the tests are done, run
+```
+mvn allure:serve
+```
+to have allure create a temporary web server for hosting the report, and open it in your default browser.
+
+----
 Make sure to solve the hCaptcha during execution if not whitelisted on Cloudflare!
+
+## Configuration
+You can set some properties in the `.properties` files found in `/src/test/resources`
+
+| Property     | Description | Default Value |
+| ------------ | ----------- | ------------- |
+| homepage.url | The base URL for tests | https://www.askgamblers.com/ |
+| webdriver.chrome.driver | The path to the webdriver | chromedriver.exe |
+| test.username | Username used for login tests | fitest |
+| test.password | Password used for login tests | Pa55word |
+| allure.results.directory | Directory for allure reports | target/allure-results |
 
 ## Potential Improvements
 - Dynamic Webdriver manager for easier switching between browsers
 - A docker container for easier environment replication
 - Proper autocomplete, quicksearch and user notification API tests (preferably in a separate project)
 - CI
+- Better report handling/report archiving
 - More tests!
