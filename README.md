@@ -18,6 +18,7 @@ This test suite uses the following projects/tools to work properly:
 ## Installation
 This project requires [Java version 11.x](https://adoptopenjdk.net/), [Maven](https://maven.apache.org) 
 and a [ChromeDriver](http://chromedriver.chromium.org/downloads) appropriate to your browser's version to build correctly.
+(Please note that the provided webdriver executable is for Chrome version 89)
 
 Once the dependencies are met, navigate to the root folder of the project and run:
 ```
