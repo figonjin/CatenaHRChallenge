@@ -16,7 +16,8 @@ This test suite uses the following projects/tools to work properly:
 - [Allure](https://docs.qameta.io/allure/) - Lighweight multi-language test report tool
 
 ## Installation
-This project requires [Java version 11.x](https://adoptopenjdk.net/) and [Maven](https://maven.apache.org) to build correctly.
+This project requires [Java version 11.x](https://adoptopenjdk.net/), [Maven](https://maven.apache.org) 
+and a [ChromeDriver](http://chromedriver.chromium.org/downloads) appropriate to your browser's version to build correctly.
 
 Once the dependencies are met, navigate to the root folder of the project and run:
 ```
