@@ -15,6 +15,12 @@ import java.util.stream.Stream;
 
 public class SearchBarTests extends TestManager {
 
+    /*Parametrized tests would be more suitable for general integration into the testing lifecycle, however due to
+    the cloudfront issue, it is easier to carry over Headers/Cookies this way to avoid constant hCaptcha
+    authentication requests. Unfortunately due to this choice, any test failing in the stream will
+    stop the execution of any subsequent test, which is not ideal.
+    */
+
     @TestFactory
     Collection<DynamicTest> searchKeywords() {
         HomePage homePage = new HomePage(driver);
@@ -33,11 +39,6 @@ public class SearchBarTests extends TestManager {
         );
     }
 
-    /*A parametrized test would be more suitable for general integration into the testing lifecycle, however due to
-    the cloudfront issue, it is easier to carry over Headers/Cookies this way to avoid constant hCaptcha
-    authentication requests. Unfortunately due to this choice, any test failing in the stream will
-    stop the execution of any subsequent test, which is not ideal.
-    */
     //Currently the test fails due to what I assume is a bug related to input sanitization
     @TestFactory
     Stream<DynamicTest> searchSpecialCharacters() {
