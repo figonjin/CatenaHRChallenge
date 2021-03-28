@@ -21,11 +21,12 @@ public class LoginPage extends AGHeader {
     }
 
     public AGHeader loginUser(String username, String password, boolean validLogin) {
+        driver.findElement(usernameField).clear();
         driver.findElement(usernameField).sendKeys(username);
         driver.findElement(passwordField).sendKeys(password);
         driver.findElement(loginButton).click();
         if (!validLogin) {
-            Assertions.assertEquals(driver.findElement(badCredentialsMessage).getText(), "Invalid username/email or password.");
+            Assertions.assertEquals("Invalid username/email or password.", driver.findElement(badCredentialsMessage).getText());
             return new LoginPage(driver);
         }
         else {
