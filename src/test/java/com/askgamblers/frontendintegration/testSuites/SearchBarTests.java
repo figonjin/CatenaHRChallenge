@@ -1,4 +1,4 @@
-package com.askgamblers.frontendintegration.tests;
+package com.askgamblers.frontendintegration.testSuites;
 
 import com.askgamblers.frontendintegration.pageObjects.HomePage;
 import com.askgamblers.frontendintegration.pageObjects.QuickSearchPage;
@@ -38,6 +38,7 @@ public class SearchBarTests extends TestManager {
     authentication requests. Unfortunately due to this choice, any test failing in the stream will
     stop the execution of any subsequent test, which is not ideal.
     */
+    //Currently the test fails due to what I assume is a bug related to input sanitization
     @TestFactory
     Stream<DynamicTest> searchSpecialCharacters() {
 

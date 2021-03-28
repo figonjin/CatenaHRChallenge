@@ -1,4 +1,4 @@
-package com.askgamblers.frontendintegration.tests;
+package com.askgamblers.frontendintegration.testSuites;
 
 import com.askgamblers.frontendintegration.helpers.Pause;
 import org.junit.jupiter.api.BeforeAll;

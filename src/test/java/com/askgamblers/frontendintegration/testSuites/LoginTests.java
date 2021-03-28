@@ -1,4 +1,4 @@
-package com.askgamblers.frontendintegration.tests;
+package com.askgamblers.frontendintegration.testSuites;
 
 import com.askgamblers.frontendintegration.pageObjects.HomePage;
 import com.askgamblers.frontendintegration.pageObjects.LoginPage;
@@ -14,7 +14,10 @@ public class LoginTests extends TestManager {
     public void loginAndLogoutValidUser() {
         HomePage homePage = new HomePage(driver);
         LoginPage loginPage = homePage.openSignIn();
-        loginPage.loginUser(testProperties.getProperty("test.username"), testProperties.getProperty("test.password"), true);
+        loginPage.loginUser(
+                testProperties.getProperty("test.username"),
+                testProperties.getProperty("test.password"),
+                true);
         homePage.logoutUser();
     }
 
